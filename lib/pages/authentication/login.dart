@@ -34,45 +34,50 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
 
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(height: 70,),
-            Image.asset('assets/logos/logo.png',),
-            Spacer(),
-            Column(
-              children: [
-                CustomTextField(title: 'Email',controller: _email),
-                SizedBox(height: 16),
-                CustomTextField(title: 'Password',controller: _password,secureText: _passwordSecure,suffix: IconButton(
-                  onPressed: (){
-                    setState(() {
-                      _passwordSecure = !_passwordSecure;
-                    });
-                  },
-                  icon: _passwordSecure? Icon(Icons.visibility) : Icon(Icons.visibility_off),
-                )),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(height: 70,),
+              Image.asset('assets/logos/logo.png',),
+              SizedBox(height: 150,),
+              Padding(
+                padding: const EdgeInsets.only(top: 100),
+                child: Column(
+                  children: [
+                    CustomTextField(title: 'Email',controller: _email),
+                    SizedBox(height: 16),
+                    CustomTextField(title: 'Password',controller: _password,secureText: _passwordSecure,suffix: IconButton(
+                      onPressed: (){
+                        setState(() {
+                          _passwordSecure = !_passwordSecure;
+                        });
+                      },
+                      icon: _passwordSecure? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+                    )),
 
-              ],
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: login,
-              child:  Text('Login'),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue.shade900),
-                  fixedSize: MaterialStateProperty.all(Size(MediaQuery.of(context).size.width, 40))
+                  ],
+                ),
               ),
-            ),
-            TextButton(onPressed: (){
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignUpScreen(),));
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: login,
+                child:  Text('Login'),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.blue.shade900),
+                    fixedSize: MaterialStateProperty.all(Size(MediaQuery.of(context).size.width, 40))
+                ),
+              ),
+              TextButton(onPressed: (){
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignUpScreen(),));
 
-            }, child: const Text('Want to Have Account? Sign Up',style: TextStyle(color: Colors.white),)),
-            SizedBox(height: 20,),
-            Visibility(child: CircularProgressIndicator(color: Colors.white,),visible: _isLoading,),
-            SizedBox(height: 50,),
-            SizedBox(height: 200,),
-          ],
+              }, child: const Text('Want to Have Account? Sign Up',style: TextStyle(color: Colors.white),)),
+              SizedBox(height: 20,),
+              Visibility(child: CircularProgressIndicator(color: Colors.white,),visible: _isLoading,),
+              SizedBox(height: 50,),
+              SizedBox(height: 100,),
+            ],
+          ),
         ),
       ),
     );
