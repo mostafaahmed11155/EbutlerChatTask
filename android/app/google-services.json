@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "942608737176",
+    "project_id": "ebutlerchat",
+    "storage_bucket": "ebutlerchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942608737176:android:761c4a3632585fb66c81ed",
+        "android_client_info": {
+          "package_name": "com.example.ebutler_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942608737176-s5v31knc1a037k3r6eri7k7935ebg4j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1RQumN2r1XlOxKN9YgZcT6nC5AlvQ45c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942608737176-s5v31knc1a037k3r6eri7k7935ebg4j2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
